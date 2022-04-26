@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<div class="container text-dark">
+    <h2>All Grounds</h2>
+    <div class="row">
+        
+        {% for g in gro %}
+        <div class="col-md-3 my-2 mx-2">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{g.FutsalName}}</h5>
+              <p class="card-text">{{g.time}}</p>
+              <a href="{% url "deleteground" g.id %}" class="btn btn-primary">Delete</a>
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
